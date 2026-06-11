@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="System diagnostics registry entry form.">
+    <title>Telemetry Node Config</title>
+</head>
+<body>
+
+    <header role="banner">
+        <h1>Internal Systems Administration</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="/metrics">Metrics</a></li>
+                <li><a href="/logs">Core Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section aria-labelledby="form-heading">
+            <h2 id="form-heading">Node Overhaul Registration</h2>
+            
+            <form action="/api/v1/nodes" method="POST">
+                <fieldset>
+                    <legend>Hardware Variables</legend>
+                    
+                    <label for="node-id">Identifier String:</label>
+                    <input type="text" id="node-id" name="nodeId" required pattern="[A-Z0-9]{8}" placeholder="HEX8801A">
+
+                    <label for="node-threshold">Safety Ceiling (Celsius):</label>
+                    <input type="number" id="node-threshold" name="threshold" min="0" max="120" value="75">
+                </fieldset>
+                
+                <button type="submit">Commit Telemetry Changes</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2026 Core Infrastructure. Data classified Tier 4.</small></p>
+    </footer>
+
+</body>
+</html>
