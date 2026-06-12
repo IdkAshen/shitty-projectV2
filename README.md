@@ -1,2 +1,2 @@
-# shitty-projectV2
-some shitty C scripts
+# ChromeOS-Utilities
+some shitty c code
